@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Punjab Bus Tracking Design System */
+
+@layer base {
+  :root {
+    /* Core app colors */
+    --background: 210 20% 98%;
+    --foreground: 220 15% 15%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary - Punjab Blue */
+    --primary: 220 100% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 100% 48%;
+
+    /* Accent - Punjab Green */
+    --accent: 174 100% 29%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 174 100% 24%;
+
+    /* Success/Available */
+    --success: 140 100% 27%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 140 76% 94%;
+    --success-light-foreground: 140 100% 27%;
+
+    /* Destructive/Unavailable */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 93% 94%;
+    --destructive-light-foreground: 0 84% 60%;
+
+    /* Neutral system */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 47%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 15% 15%;
+
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 220 100% 53%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(220 100% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--accent)));
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 220 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 100% 55%;
+
+    --accent: 174 100% 35%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 174 100% 30%;
+
+    --success: 140 100% 35%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 140 30% 15%;
+    --success-light-foreground: 140 80% 70%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 30% 15%;
+    --destructive-light-foreground: 0 84% 70%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 20% 95%;
+
+    --border: 217 32% 18%;
+    --input: 217 32% 18%;
+    --ring: 220 100% 60%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(220 100% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--accent)));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom animations */
+  @keyframes pulse-location {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-location {
+    animation: pulse-location 2s infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
